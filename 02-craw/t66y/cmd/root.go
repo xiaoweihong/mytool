@@ -23,8 +23,8 @@ import (
 
 var (
 	t66yURL      = "http://t66y.com/htm_data/2004/2/3872569.html"
-	downLoadPath = util.GetDownLoadPath()
-	paral        =  5
+	DownLoadPath = util.GetDownLoadPath()
+	paral        = 5
 )
 
 var rootCmd = &cobra.Command{
@@ -32,7 +32,7 @@ var rootCmd = &cobra.Command{
 	Short: "A tool to download t66y image",
 	Long:  `A tool to download t66y image`,
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println(downLoadPath)
+		fmt.Println(DownLoadPath)
 	},
 }
 

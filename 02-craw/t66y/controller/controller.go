@@ -80,7 +80,10 @@ func DownLoadImage(url string, title string, downLoadPath string) {
 
 	filename, _ := uuid.GenerateUUID()
 	savePath := filepath.Join(imagePath, fmt.Sprintf("%s.jpg", filename))
-	imgBytes, _ := ioutil.ReadAll(resp.Body)
+	imgBytes, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Error(err)
+	}
 	err = ioutil.WriteFile(savePath, imgBytes, 0644)
 	if err != nil {
 		log.Error(err)
@@ -100,8 +103,9 @@ func DownLoadImageAsync(url string, title string, downLoadPath string, paralChan
 func GetBytesFromURL(url string) (*gohttp.GoResponse, error) {
 	random := browser.Chrome()
 	resp, err := gohttp.New().
-		Proxy("http://127.0.0.1:1080").
-		Timeout(time.Second*15).
+		Retries(10).
+		//Proxy("http://127.0.0.1:1080").
+		Timeout(time.Second*200).
 		Header("user-agent", random).
 		Get(url)
 	if err != nil {

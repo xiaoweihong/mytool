@@ -11,7 +11,7 @@ var cmdDownload = &cobra.Command{
 	Long:  `下载t66y图片`,
 	//Args: cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		controller.Run(t66yURL, downLoadPath, paral)
+		controller.Run(t66yURL, DownLoadPath, paral)
 	},
 }
 

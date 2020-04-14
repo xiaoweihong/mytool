@@ -9,6 +9,7 @@ require (
 	github.com/axgle/mahonia v0.0.0-20180208002826-3358181d7394
 	github.com/cizixs/gohttp v0.0.0-20161129122734-f1d050ce06f6
 	github.com/go-ole/go-ole v1.2.4 // indirect
+	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
 	github.com/google/go-querystring v1.0.0 // indirect
 	github.com/hashicorp/go-uuid v1.0.2
 	github.com/shirou/gopsutil v2.20.3+incompatible
